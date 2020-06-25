@@ -19,7 +19,7 @@ defmodule ExAws.Chime.MixProject do
   def application do
     [
       extra_applications: [:logger],
-      mod: {ExAws.Application, []}
+      mod: {ExAws.Chime.Application, []}
     ]
   end
 
@@ -30,6 +30,7 @@ defmodule ExAws.Chime.MixProject do
       {:hackney, ">= 0.0.0", only: [:dev, :test]},
       {:sweet_xml, ">= 0.0.0", optional: true},
       {:bypass, "~> 1.0", only: :test},
+      {:jason, "~> 1.1.0"},
       ex_aws()
     ]
   end
