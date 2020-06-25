@@ -67,9 +67,17 @@ defmodule ExAws.Chime do
 
   ## Examples
   ```
-  Chime.create_attendee("1f30c754-b7b4-4880-866a-dc9f8e4fc7c7", %{"ExternalUserId" => "1f30c754-b7b4-4880-866a-dc9f8e4fc7c7", "Tags" => []})
+  Chime.create_attendee("1f72816b-e591-46fd-a95a-a9ce98e9a840", %{"ExternalUserId" => "test-user-id-2"})
 
-  {:ok, %{}}
+  {:ok,
+  %{
+   "Attendee" => %{
+     "AttendeeId" => "5ca35a5d-12cd-41cb-bea2-c79fa0de9244",
+     "ExternalUserId" => "test-user-id-2",
+     "JoinToken" => "NWNhMzVhNWQtMTJjZC00MWNiLWJlYTItYzc5ZmEwZGU5MjQ0OmJjYmQzMzhlLWI0ZjYtNDFlYS1iOTJmLTlmNzFlNTBmOTliMg",
+     "Tags" => nil
+   }
+  }}
   ```
   """
   def create_attendee(meeting_id, data) do
