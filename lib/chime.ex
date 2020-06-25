@@ -13,6 +13,7 @@ defmodule ExAws.Chime do
     "MediaRegion" => "us-east-2",
     "MeetingHostId" => "bar.localhost"
   })
+  |> ExAws.request()
 
   {:ok,
   %{
@@ -40,7 +41,6 @@ defmodule ExAws.Chime do
       path: "/meetings",
       data: data
     }
-    |> ExAws.request()
   end
 
   @doc """
@@ -49,6 +49,7 @@ defmodule ExAws.Chime do
   ## Examples
   ```
   Chime.delete_meeting("1f30c754-b7b4-4880-866a-dc9f8e4fc7c7")
+  |> ExAws.request()
 
   {:ok, %{}}
   ```
@@ -59,7 +60,6 @@ defmodule ExAws.Chime do
       http_method: :delete,
       path: "/meetings/#{meeting_id}"
     }
-    |> ExAws.request()
   end
 
   @doc """
@@ -68,6 +68,7 @@ defmodule ExAws.Chime do
   ## Examples
   ```
   Chime.create_attendee("1f72816b-e591-46fd-a95a-a9ce98e9a840", %{"ExternalUserId" => "test-user-id-2"})
+  |> ExAws.request()
 
   {:ok,
   %{
@@ -87,6 +88,5 @@ defmodule ExAws.Chime do
       path: "/meetings/#{meeting_id}/attendees",
       data: data
     }
-    |> ExAws.request()
   end
 end

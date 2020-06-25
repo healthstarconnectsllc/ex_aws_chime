@@ -18,8 +18,7 @@ defmodule ExAws.Chime.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger],
-      mod: {ExAws.Chime.Application, []}
+      extra_applications: [:logger]
     ]
   end
 
@@ -28,7 +27,7 @@ defmodule ExAws.Chime.MixProject do
     [
       {:ex_doc, ">= 0.0.0", only: :dev},
       {:hackney, ">= 0.0.0", only: [:dev, :test]},
-      {:sweet_xml, ">= 0.0.0", optional: true},
+      {:elixir_uuid, "~> 1.2", only: :test},
       {:bypass, "~> 1.0", only: :test},
       {:jason, "~> 1.1.0"},
       ex_aws()
